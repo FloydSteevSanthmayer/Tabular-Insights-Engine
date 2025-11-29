@@ -1,0 +1,13 @@
+\
+    %% Architecture overview - Mermaid
+    graph LR
+      User -->|interacts| UI[Streamlit App]
+      UI -->|requests| API[Local Flask/Service (optional)]
+      UI --> DB[(PostgreSQL)]
+      UI --> LLM[OpenRouter/OpenAI-compatible LLM]
+      LLM -->|responses| UI
+      DB -->|data| UI
+      subgraph infra [Optional infra]
+        API -->|queues| MQ[(Message Queue)]
+        MQ --> Worker[Background Worker]
+      end

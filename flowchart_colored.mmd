@@ -1,0 +1,19 @@
+\
+    %% Flowchart (color-coded) - Mermaid
+    flowchart LR
+        A["Start"]:::start --> B["Fetch data from PostgreSQL DB"]:::process
+        B --> C{"Rows returned?"}:::decision
+        C -- "Yes" --> D["Format rows into text"]:::process
+        C -- "No" --> E["Add 'No data available' note"]:::process
+        D --> F["Add table text to combined_text"]:::process
+        E --> F
+        F --> G["Send combined_text to LLM for Summary"]:::process
+        G --> H["Receive Summary"]:::process
+        H --> I["Send Summary to LLM for Follow-up Questions"]:::process
+        I --> J["Receive Follow-up Questions"]:::process
+        J --> K["End"]:::end
+
+        classDef start fill:#5cb85c,stroke:#2d662d,color:#fff;
+        classDef end fill:#d9534f,stroke:#7a1c17,color:#fff;
+        classDef process fill:#0275d8,stroke:#014f86,color:#fff;
+        classDef decision fill:#f0ad4e,stroke:#a1731a,color:#fff;
