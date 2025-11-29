@@ -28,9 +28,6 @@ This README provides everything needed to understand, run, and extend the projec
 ├── app.py                       # Streamlit demo launcher
 ├── flowchart_colored.mmd        # Mermaid source (flowchart)
 ├── architecture.mmd             # Mermaid architecture overview
-├── docs/
-│   ├── flowchart_colored.png    # Rendered flowchart image (color-coded)
-│   └── architecture_placeholder.png
 ├── Dockerfile
 ├── requirements.txt
 ├── .env.example
